@@ -47,64 +47,55 @@ button_export[0].addEventListener("click", function () {
 });
 
 function search(cep) {
-    fetch(`/search`, {
-        method: 'post',
-        headers: {
-            "Content-Type": "application/json",
-            "X-CSRF-Token": document.querySelector('meta[name="csrf-token"]').content,
-        },
-        body: JSON.stringify({
-            cep: cep
-        })
-    })
+    fetch(`https://viacep.com.br/ws/${cep}/json/`)
         .then(response => {
             return response.json()
         })
         .then(response => {
-            if (response.message.erro) {
+            if(response.erro) {
                 return alert("CEP não encontrado")
             }
             const newRow = tbody.insertRow(tbody.rows.length)
             newRow.innerHTML = "<tr>" +
-                "<td>" + response.message.cep + "</td>" +
-                "<td>" + response.message.logradouro.normalize('NFD').replace(/[\u0300-\u036f]/g, "") + "</td>" +
-                "<td>" + response.message.bairro.normalize('NFD').replace(/[\u0300-\u036f]/g, "") + "</td>" +
-                "<td>" + response.message.localidade.normalize('NFD').replace(/[\u0300-\u036f]/g, "") + "</td>" +
-                "<td>" + response.message.uf.normalize('NFD').replace(/[\u0300-\u036f]/g, "") + "</td>" +
-                "<td>" + response.message.complemento .normalize('NFD').replace(/[\u0300-\u036f]/g, "")+ "</td>" +
-                "<td>" + response.message.ibge + "</td>" +
-                "<td>" + response.message.gia + "</td>" +
-                "<td>" + response.message.ddd + "</td>" +
-                "<td>" + response.message.siafi + "</td>" +
+                "<td>" + response.cep + "</td>" +
+                "<td>" + response.logradouro.normalize('NFD').replace(/[\u0300-\u036f]/g, "") + "</td>" +
+                "<td>" + response.bairro.normalize('NFD').replace(/[\u0300-\u036f]/g, "") + "</td>" +
+                "<td>" + response.localidade.normalize('NFD').replace(/[\u0300-\u036f]/g, "") + "</td>" +
+                "<td>" + response.uf.normalize('NFD').replace(/[\u0300-\u036f]/g, "") + "</td>" +
+                "<td>" + response.complemento .normalize('NFD').replace(/[\u0300-\u036f]/g, "")+ "</td>" +
+                "<td>" + response.ibge + "</td>" +
+                "<td>" + response.gia + "</td>" +
+                "<td>" + response.ddd + "</td>" +
+                "<td>" + response.siafi + "</td>" +
                 "</tr>";
 
             local = JSON.parse(localStorage.getItem("values"));
 
             if(!local) {
                 localStorage.setItem("values", JSON.stringify([{
-                    "cep": response.message.cep,
-                    "logradouro": response.message.logradouro.normalize('NFD').replace(/[\u0300-\u036f]/g, ""),
-                    "bairro": response.message.bairro.normalize('NFD').replace(/[\u0300-\u036f]/g, ""),
-                    "localidade": response.message.localidade.normalize('NFD').replace(/[\u0300-\u036f]/g, ""),
-                    "uf": response.message.uf.normalize('NFD').replace(/[\u0300-\u036f]/g, ""),
-                    "complemento": response.message.complemento.normalize('NFD').replace(/[\u0300-\u036f]/g, ""),
-                    "ibge": response.message.ibge,
-                    "gia": response.message.gia,
-                    "ddd": response.message.ddd,
-                    "siafi": response.message.siafi,
+                    "cep": response.cep,
+                    "logradouro": response.logradouro.normalize('NFD').replace(/[\u0300-\u036f]/g, ""),
+                    "bairro": response.bairro.normalize('NFD').replace(/[\u0300-\u036f]/g, ""),
+                    "localidade": response.localidade.normalize('NFD').replace(/[\u0300-\u036f]/g, ""),
+                    "uf": response.uf.normalize('NFD').replace(/[\u0300-\u036f]/g, ""),
+                    "complemento": response.complemento.normalize('NFD').replace(/[\u0300-\u036f]/g, ""),
+                    "ibge": response.ibge,
+                    "gia": response.gia,
+                    "ddd": response.ddd,
+                    "siafi": response.siafi,
                 }]))
             } else {
                 local.push({
-                    "cep": response.message.cep,
-                    "logradouro": response.message.logradouro.normalize('NFD').replace(/[\u0300-\u036f]/g, ""),
-                    "bairro": response.message.bairro.normalize('NFD').replace(/[\u0300-\u036f]/g, ""),
-                    "localidade": response.message.localidade.normalize('NFD').replace(/[\u0300-\u036f]/g, ""),
-                    "uf": response.message.uf.normalize('NFD').replace(/[\u0300-\u036f]/g, ""),
-                    "complemento": response.message.complemento.normalize('NFD').replace(/[\u0300-\u036f]/g, ""),
-                    "ibge": response.message.ibge,
-                    "gia": response.message.gia,
-                    "ddd": response.message.ddd,
-                    "siafi": response.message.siafi,
+                    "cep": response.cep,
+                    "logradouro": response.logradouro.normalize('NFD').replace(/[\u0300-\u036f]/g, ""),
+                    "bairro": response.bairro.normalize('NFD').replace(/[\u0300-\u036f]/g, ""),
+                    "localidade": response.localidade.normalize('NFD').replace(/[\u0300-\u036f]/g, ""),
+                    "uf": response.uf.normalize('NFD').replace(/[\u0300-\u036f]/g, ""),
+                    "complemento": response.complemento.normalize('NFD').replace(/[\u0300-\u036f]/g, ""),
+                    "ibge": response.ibge,
+                    "gia": response.gia,
+                    "ddd": response.ddd,
+                    "siafi": response.siafi,
                 })
                 localStorage.setItem("values", JSON.stringify(local))
             }

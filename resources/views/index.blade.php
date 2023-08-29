@@ -38,7 +38,7 @@
 
 </table>
 
-<div style="display: flex; flex-direction: row; justify-content: space-between; width: 250px;">
+<div style="display: flex; flex-direction: row; justify-content: space-between; width: 300px;">
     <button class="export"><b>Exportar informações</b></button>
     <button class="clean"><b>Limpar tabela</b></button>
 </div>
