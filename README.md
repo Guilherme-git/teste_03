@@ -3,15 +3,15 @@
 Este teste realiza uma consulta na api viacep, trazendo as informações do endereço do usuário de acordo com o cep informado por ele no **_input_**.
 
 
-No teste consta uma tabela para armazenar as pesquisas feitas pelo cep e também um input html para o usuário digitar o cep.
+No teste consta um simples layout html para mostrar algumas informações que são retornáveis da api.
 
-No momento que o usuário terminar de digitar o cep, e clicar no botão de cor verde chamado **PESQUISAR**, é feita uma validação se o cep não está vazio e se o cep informado é valido. Caso tudo ocorrer bem, é então realizada a consulta no viacep utilizando o fetch, caso o cep não seja encontrado, é mostrada a mensagem para o usuário, caso o cep for encontrado, é mostrado dentro da tabela as informações retornadas da api, que também é salva no localsotorage do navegador, para o usuário não perdê-las caso atualizar a página.
+No momento que o usuário terminar de digitar o o usuário que ele deseja pesquisar no github, e clicar no botão de cor verde chamado **PESQUISAR**, é feita uma validação se o cep não está vazio e se o cep informado é valido. Caso tudo ocorrer bem, é então realizada a consulta no viacep utilizando o fetch, caso o cep não seja encontrado, é mostrada a mensagem para o usuário, caso o cep for encontrado, é mostrado dentro da tabela as informações retornadas da api, que também é salva no localsotorage do navegador, para o usuário não perdê-las caso atualizar a página.
 
 ---
 
 ## Descrição dos métodos criados no arquivo javascript
 
-### Método *search(cep)* - Esse método é responsável por realizar a consulta na api viacep utilizando o fetch. Caso o cep não é mostrada uma mensagem para o usuário. Se tudo ocorrer como o previsto, é inserido na tabela html, as informações retornadas da api e também é salvo essas informações no localstorage do navegador
+### Método *search(cep)* - Esse método é responsável por realizar a consulta na api viacep utilizando o fetch. Caso o cep não seja encontrado, é mostrada uma mensagem para o usuário. Se tudo ocorrer como o previsto, é inserido na tabela html, as informações retornadas da api e também é salvo essas informações no localstorage do navegador
 
 ### > Método *popularTable()* - Esse método é resposável por consultar o localstorage do navegador quando o usuário entrar na página, e carregar a tabela html com as informações salvas
 
