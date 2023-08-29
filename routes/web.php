@@ -8,5 +8,4 @@ Route::get('/', function () {
     return view('index');
 });
 
-Route::post('/search', [IndexController::class,'index']);
 Route::post('/export', [IndexController::class,'export']);
