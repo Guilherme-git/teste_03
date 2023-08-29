@@ -27,7 +27,7 @@ No momento que o usuário terminar de digitar o cep, e clicar no botão de cor v
 
 ## Descrição das funcionalidades dos botões
 
-### Botão *Pesquisar* - Esse botão é reponsável por chamar o método que realizara a consulta na api viacep, e também validar se o cep informado é válido e se ele esta preenchido
+### Botão *Pesquisar* - Esse botão é reponsável por chamar o método search(cep) que realizara a consulta na api viacep, e também validar se o cep informado é válido e se ele esta preenchido
 
 ### Botão *Exportar informações* - Esse botão é responsável enviar para o IndexController dentro método export() todas as informações armazenadas no localstorage para ser criado o arquivo .csv. Caso não haver nenhuma informações salva no localstorage é mostrada uma mensagem para o usuário.
 
