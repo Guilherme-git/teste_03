@@ -11,7 +11,7 @@ No momento que o usuário terminar de digitar o cep, e clicar no botão de cor v
 
 ## Descrição dos métodos criados no arquivo javascript
 
-### Método *search(cep)* - Esse método é responsável por realizar a consulta fecth no controller do laravel chamado IndexController e dentro do método chamado index, passamos como paramentro para esse método, o cep informado pelo usuário. Por fim, é realizada a consulta na api viacep utilizando o curl que é nativo do php. Apos consultar o viacep, é retornado para o javascript as informações optidas na api. Logo depois é realizada a válidação se o cep foi encontrado, caso tudo ocorrer bem, é inserido na tabela html as informações retornadas do controller laravel, e também é salvo no localstorage do navegador.
+### Método *search(cep)* - Esse método é responsável por realizar a consulta fetch no controller do laravel chamado IndexController e dentro do método chamado index, passamos como paramentro para esse método, o cep informado pelo usuário. Por fim, é realizada a consulta na api viacep utilizando o curl que é nativo do php. Apos consultar o viacep, é retornado para o javascript as informações optidas na api. Logo depois é realizada a válidação se o cep foi encontrado, caso tudo ocorrer bem, é inserido na tabela html as informações retornadas do controller laravel, e também é salvo no localstorage do navegador.
 
 ### > Método *popularTable()* - Esse método é resposável por consultar o localstorage do navegador quando o usuário entrar na página, e carregar a tabela html com as informações salvas
 
