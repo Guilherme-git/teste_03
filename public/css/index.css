@@ -1,0 +1,53 @@
+body {
+    padding: 14px;
+}
+
+input {
+    width: 200px;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+    align-self: flex-end;
+}
+
+table {
+    width: 100%;
+    margin: 20px auto;
+    border-radius: 8px;
+}
+
+th {
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif
+}
+
+.fixed {
+    table-layout: fixed;
+}
+
+table,
+td,
+th {
+    border-collapse: collapse;
+}
+
+th,
+td {
+    padding: 10px;
+    border: solid 1px;
+    text-align: center;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif
+}
+
+.btnSearch {
+    background-color: #059862;
+    color: #fff;
+    border-radius: 8px;
+    border: none;
+    height: 40px;
+    align-self: center;
+    margin-right: 20px;
+    cursor: pointer;
+}
